@@ -1,0 +1,50 @@
+public class ProgramaAnimal {
+
+    // Classe base
+    static class Animal {
+        String nome;
+
+        public Animal(String nome) {
+            this.nome = nome;
+        }
+
+        public void emitirSom() {
+            System.out.println(nome + " faz um som.");
+        }
+    }
+
+    // Subclasse Cachorro
+    static class Cachorro extends Animal {
+
+        public Cachorro(String nome) {
+            super(nome);
+        }
+
+        @Override
+        public void emitirSom() {
+            System.out.println(nome + " diz: Au Au!");
+        }
+    }
+
+    // Subclasse Gato
+    static class Gato extends Animal {
+
+        public Gato(String nome) {
+            super(nome);
+        }
+
+        @Override
+        public void emitirSom() {
+            System.out.println(nome + " diz: Miau!");
+        }
+    }
+
+    // Programa principal
+    public static void main(String[] args) {
+        Animal cachorro = new Cachorro("Rex");
+        Animal gato = new Gato("Mimi");
+
+        cachorro.emitirSom();
+        gato.emitirSom();
+    }
+}
